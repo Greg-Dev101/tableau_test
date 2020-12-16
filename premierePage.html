@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+      <meta charset="utf-8"/>
+            <title>Envoi des trucs js</title>
+      </head>
+
+      <body>
+            <h2>Première page</h2>
+      <p>
+      Un nombre SVP : <input type = "number" id="nombre" />
+      </p>
+      <p>
+      Un texte SVP : <input type = "text" id="texte" />
+      </p>
+      <input type="button" value="Envoyer du texte dans une autre page !"
+      onClick="maSuperFonctionjs();"/>
+</body>
+
+<script>
+      function maSuperFonctionjs(){
+            var txt = document.getElementById('texte').value;
+            var nombre = document.getElementById('nombre').value;
+
+      location.replace(encodeURI("deuxiemePage.html?t="+txt+"&n="+nombre));
+      }
+</script>
+ </html>
+ 

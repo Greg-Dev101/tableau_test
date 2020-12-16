@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ <head>
+      <meta charset="utf-8"/>
+            <title>Mon mini tableau</title>
+      </head>
+
+      <body>
+            <h2>Ici le formulaire</h2>
+
+            <p>Customer nane: <input type = "text" id="nomClient" /></p>      
+            <p>Custoner ID: <input type = "text" id="numeroClient" /></p>
+            <p>Type of Customer: <input type = "text" id="typeClient" /></p>
+            <p>Field of activity: <input type = "text" id="typeClient" /></p>
+            <p>Turnhover: <input type = "text" id="CaClient" /></p>
+            <p>Staff: <input type = "text" id="personnelClient" /></p>
+            <p>Address: <input type = "text" id="adresseClient" /></p>
+            <p>Phone: <input type = "text" id="telephoneClient" /></p>
+            <p>Contact: <input type = "text" id="contactClient" /></p>
+            <p>Comments: <input type = "text" id="commentaires" /></p>
+
+      <input type="button" value="Envoyer les informations dans un tableau dans une autre page !"
+      onClick="maSuperFonctionjs();"/>
+</body>
+
+<script>
+      function maSuperFonctionjs(){
+            var txt = document.getElementById('nomClient').value;
+            var nombre = document.getElementById('numeroClient').value;
+
+      location.replace(encodeURI("p2miniTableau.html?t="+txt+"&n="+nombre));
+      }
+</script>
+ </html>
+ 

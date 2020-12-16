@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABI - Customer list</title>
+   <link type= "text/css" rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+    <body>
+        <h2>Ici le tableau de données</h2>
+        
+              <table>
+                <thead>
+                    <tr>
+                        <th>Customer name</th>
+                        <th>Customer ID</th>
+                        <th>Type of Customer</th>
+                        <th>Field of activity</th>
+                        <th>Turnhover</th>
+                        <th>Staff</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Contact</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td><span id="recuName"></span></td>
+                        <td><span id="recuNumeroClient"></span></td>
+                        <td><span id="recuType"></span></td>
+                        <td><span id="recuField"></span></td>
+                        <td><span id="recuCa"></span></td>
+                        <td><span id="recuPersonnel"></span></td>
+                        <td><span id="recuAdresse"></span></td>
+                        <td><span id="recuTelephone"></span></td>
+                        <td><span id="recuContact"></span></td>
+                        <td><span id="recuComments"></span></td>
+                    </tr>
+                    <tr>
+                        <td>XX</td>
+                        <td>XXXXXXXX</td>
+                    </tr>
+                    </tr>
+                     
+                </tbody>
+            </table>
+        </main>
+
+        <script>
+            // découper sur ? ==> tableau à 2 postes
+            var infos = (decodeURI(location.href).split("?"))[1]; //[1]
+            // découper sur & ==> tableau à n postes (ici n=2)
+            // (on pouvait aussi parcourir le tableau tab avec une boucle for)
+            var tab = infos.split("&");
+           // les valeurs sont dans le 2° poste de chacun des tableaux
+           var customerName = decodeURI((tab[0].split("="))[1]);
+           var customerID = decodeURI((tab[1].split("="))[1]);
+           var customerType = decodeURI((tab[1].split("="))[1]);
+           var customerField = decodeURI((tab[1].split("="))[1]);
+           var customerTO = decodeURI((tab[1].split("="))[1]);
+           var customerStaff = decodeURI((tab[1].split("="))[1]);
+           var customerAddress = decodeURI((tab[1].split("="))[1]);
+           var customerPhone= decodeURI((tab[1].split("="))[1]);
+           var customerContact= decodeURI((tab[1].split("="))[1]);
+           var customerComments= decodeURI((tab[1].split("="))[1]);
+
+
+           // afficher dans les colonnes
+           document.getElementById('recuName').innerHTML = customerName;
+           document.getElementById('recuNumeroClient').innerHTML = customerID;
+           document.getElementById('recuType').innerHTML = customerType;
+           document.getElementById('recuField').innerHTML = customerField;
+           document.getElementById('recuCa').innerHTML = customerTO;
+           document.getElementById('recuPersonnel').innerHTML = customerStaff;
+           document.getElementById('recuAdresse').innerHTML = customerAddress;
+           document.getElementById('recuTelephone').innerHTML = customerPhone;
+           document.getElementById('recuContact').innerHTML = customerContact;
+           document.getElementById('recuContact').innerHTML = customerComments;
+           </script>
+
+</body>
+
+</html>
